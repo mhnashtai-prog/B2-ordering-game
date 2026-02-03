@@ -211,129 +211,110 @@
       line-height: 1.6;
     }
 
-    /* SLIDE VIEWER */
-    .slide-viewer {
+    /* SENTENCES DISPLAY */
+    .sentences-display {
       background: linear-gradient(145deg, rgba(28, 28, 30, 0.98), rgba(20, 20, 22, 0.98));
       border-radius: 1.5rem;
       border: 2px solid rgba(201, 169, 97, 0.3);
-      overflow: hidden;
+      padding: 2rem;
       box-shadow: 0 20px 60px rgba(0, 0, 0, 0.7);
       margin-bottom: 2rem;
+      max-height: 500px;
+      overflow-y: auto;
     }
 
-    .slides-container {
-      position: relative;
-      min-height: 350px;
-      overflow: hidden;
-    }
-
-    .sentence-slide {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      padding: 3rem 2rem;
+    .sentences-grid {
       display: flex;
       flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      opacity: 0;
-      transform: translateX(100%);
-      transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-      pointer-events: none;
+      gap: 1rem;
     }
 
-    .sentence-slide.active {
-      opacity: 1;
-      transform: translateX(0);
-      pointer-events: auto;
-      z-index: 10;
+    .sentence-card {
+      background: rgba(245, 241, 232, 0.95);
+      border: 2px solid rgba(139, 115, 85, 0.2);
+      border-radius: 0.75rem;
+      padding: 1.25rem 1.5rem;
+      transition: all 0.3s;
+      display: flex;
+      gap: 1rem;
+      align-items: flex-start;
     }
 
-    .slide-number {
+    .sentence-card:hover {
+      border-color: rgba(201, 169, 97, 0.5);
+      box-shadow: 0 4px 15px rgba(201, 169, 97, 0.2);
+    }
+
+    .sentence-card.correct {
+      border-color: #22c55e;
+      background: rgba(34, 197, 94, 0.1);
+    }
+
+    .sentence-card.incorrect {
+      border-color: #ef4444;
+      background: rgba(239, 68, 68, 0.1);
+    }
+
+    .sentence-label {
       font-family: 'Space Grotesk', sans-serif;
-      font-size: 0.85rem;
+      font-size: 0.8rem;
       font-weight: 700;
-      color: rgba(201, 169, 97, 0.6);
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      margin-bottom: 1.5rem;
-    }
-
-    .sentence-text {
-      font-family: 'Crimson Text', serif;
-      font-size: 1.5rem;
-      line-height: 1.6;
-      text-align: center;
-      color: #e5e5e7;
-      max-width: 90%;
-      font-weight: 600;
-    }
-
-    .sentence-text.long {
-      font-size: 1.2rem;
-    }
-
-    .sentence-text.very-long {
-      font-size: 1rem;
-    }
-
-    /* NAVIGATION */
-    .slide-nav {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 1.5rem;
-      background: rgba(0, 0, 0, 0.2);
-    }
-
-    .nav-arrow {
-      width: 45px;
-      height: 45px;
-      border-radius: 50%;
-      background: rgba(201, 169, 97, 0.2);
-      border: 2px solid rgba(201, 169, 97, 0.4);
       color: #C9A961;
-      font-size: 1.3rem;
+      background: rgba(201, 169, 97, 0.15);
+      padding: 0.35rem 0.65rem;
+      border-radius: 0.4rem;
+      text-align: center;
+      min-width: 45px;
+      flex-shrink: 0;
+    }
+
+    .sentence-content {
+      flex: 1;
       display: flex;
+      gap: 1rem;
       align-items: center;
-      justify-content: center;
-      cursor: pointer;
-      transition: all 0.3s;
-      font-weight: bold;
     }
 
-    .nav-arrow:hover:not(:disabled) {
-      background: rgba(201, 169, 97, 0.35);
-      transform: scale(1.1);
+    .sentence-text-display {
+      flex: 1;
+      font-family: 'Crimson Text', serif;
+      font-size: 1.05rem;
+      line-height: 1.65;
+      color: #2a2a2a;
+      font-weight: 500;
     }
 
-    .nav-arrow:disabled {
-      opacity: 0.2;
-      cursor: not-allowed;
+    .sentence-input {
+      flex-shrink: 0;
     }
 
-    .slide-dots {
-      display: flex;
-      gap: 0.5rem;
-      flex-wrap: wrap;
-      justify-content: center;
-    }
-
-    .slide-dot {
-      width: 10px;
-      height: 10px;
-      border-radius: 50%;
-      background: rgba(99, 99, 102, 0.3);
-      cursor: pointer;
+    .sentence-input input {
+      width: 60px;
+      padding: 0.5rem;
+      text-align: center;
+      font-size: 1.1rem;
+      font-weight: 700;
+      border: 2px solid rgba(139, 115, 85, 0.3);
+      border-radius: 0.5rem;
+      background: white;
+      color: #2a2a2a;
       transition: all 0.3s;
     }
 
-    .slide-dot.active {
-      background: #C9A961;
-      transform: scale(1.4);
-      box-shadow: 0 0 10px rgba(201, 169, 97, 0.6);
+    .sentence-input input:focus {
+      outline: none;
+      border-color: #C9A961;
+      box-shadow: 0 0 0 3px rgba(201, 169, 97, 0.2);
+    }
+
+    .sentence-input label {
+      display: block;
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 0.7rem;
+      font-weight: 600;
+      color: #6b5843;
+      margin-bottom: 0.25rem;
+      text-align: center;
     }
 
     /* ORDERING INTERFACE */
@@ -580,21 +561,16 @@
         <h2 class="game-title" id="gameTitle">Sentence Sequencing Challenge</h2>
         
         <div class="game-instructions">
-          <strong>📋 Instructions:</strong> The sentences below are jumbled! Navigate through them using the arrows, 
-          then enter the correct order number (1, 2, 3...) for each sentence in the boxes below. 
+          <strong>📋 Instructions:</strong> Read through ALL the scrambled sentences below. 
+          Analyze the discourse markers, transitions, and logical flow. 
+          Then enter the correct order number (1, 2, 3...) in the box next to each sentence. 
           Click Submit to check your answer!
         </div>
 
-        <!-- SLIDE VIEWER -->
-        <div class="slide-viewer">
-          <div class="slides-container" id="slidesContainer">
-            <!-- Slides will be generated here -->
-          </div>
-          
-          <div class="slide-nav">
-            <button class="nav-arrow" id="prevBtn" onclick="navigateSlide(-1)">←</button>
-            <div class="slide-dots" id="slideDots"></div>
-            <button class="nav-arrow" id="nextBtn" onclick="navigateSlide(1)">→</button>
+        <!-- SENTENCE LIST DISPLAY -->
+        <div class="sentences-display">
+          <div class="sentences-grid" id="sentencesGrid">
+            <!-- All sentences shown here -->
           </div>
         </div>
 
