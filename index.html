@@ -219,7 +219,7 @@
       padding: 2rem;
       box-shadow: 0 20px 60px rgba(0, 0, 0, 0.7);
       margin-bottom: 2rem;
-      max-height: 500px;
+      max-height: 550px;
       overflow-y: auto;
     }
 
@@ -315,71 +315,6 @@
       color: #6b5843;
       margin-bottom: 0.25rem;
       text-align: center;
-    }
-
-    /* ORDERING INTERFACE */
-    .ordering-section {
-      margin-top: 2rem;
-    }
-
-    .ordering-title {
-      font-family: 'Space Grotesk', sans-serif;
-      font-size: 1.1rem;
-      font-weight: 700;
-      color: #2a2a2a;
-      margin-bottom: 1rem;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-    }
-
-    .answer-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(50px, 1fr));
-      gap: 0.75rem;
-      margin-bottom: 1.5rem;
-    }
-
-    .answer-input {
-      position: relative;
-    }
-
-    .answer-input label {
-      display: block;
-      font-family: 'Space Grotesk', sans-serif;
-      font-size: 0.7rem;
-      font-weight: 600;
-      color: #6b5843;
-      margin-bottom: 0.3rem;
-      text-align: center;
-    }
-
-    .answer-input input {
-      width: 100%;
-      padding: 0.6rem;
-      text-align: center;
-      font-size: 1rem;
-      font-weight: 700;
-      border: 2px solid rgba(139, 115, 85, 0.3);
-      border-radius: 0.5rem;
-      background: white;
-      color: #2a2a2a;
-      transition: all 0.3s;
-    }
-
-    .answer-input input:focus {
-      outline: none;
-      border-color: #C9A961;
-      box-shadow: 0 0 0 3px rgba(201, 169, 97, 0.2);
-    }
-
-    .answer-input.correct input {
-      border-color: #22c55e;
-      background: rgba(34, 197, 94, 0.1);
-    }
-
-    .answer-input.incorrect input {
-      border-color: #ef4444;
-      background: rgba(239, 68, 68, 0.1);
     }
 
     /* ACTION BUTTONS */
@@ -487,21 +422,35 @@
 
     /* MOBILE */
     @media (max-width: 768px) {
-      .sentence-text {
-        font-size: 1.2rem;
+      .sentence-text-display {
+        font-size: 0.95rem;
       }
 
-      .sentence-text.long {
+      .sentence-input input {
+        width: 50px;
+        padding: 0.4rem;
         font-size: 1rem;
       }
 
-      .sentence-text.very-long {
-        font-size: 0.9rem;
+      .sentence-card {
+        padding: 1rem;
+        flex-direction: column;
+        gap: 0.75rem;
       }
 
-      .answer-grid {
-        grid-template-columns: repeat(auto-fill, minmax(45px, 1fr));
+      .sentence-content {
+        flex-direction: column;
+        gap: 0.75rem;
+      }
+
+      .sentence-input {
+        display: flex;
+        align-items: center;
         gap: 0.5rem;
+      }
+
+      .sentence-input label {
+        margin-bottom: 0;
       }
     }
   </style>
@@ -580,14 +529,6 @@
           <div class="results-message" id="resultsMessage">Keep trying!</div>
         </div>
 
-        <!-- ORDERING INTERFACE -->
-        <div class="ordering-section">
-          <h3 class="ordering-title">📝 Enter the Correct Order:</h3>
-          <div class="answer-grid" id="answerGrid">
-            <!-- Input boxes will be generated here -->
-          </div>
-        </div>
-
         <!-- ACTIONS -->
         <div class="game-actions">
           <button class="game-btn btn-submit" id="submitBtn" onclick="checkAnswer()">Submit Answer</button>
@@ -605,7 +546,6 @@
     let currentSample = null;
     let sentences = [];
     let scrambledSentences = [];
-    let currentSlide = 0;
     let correctOrder = [];
     let hasSubmitted = false;
 
@@ -672,7 +612,7 @@
       shuffleArray(scrambledSentences);
       
       console.log('Total sentences:', sentences.length);
-      console.log('Scrambled:', scrambledSentences);
+      console.log('Scrambled:', scrambledSentences.length);
     }
 
     // Shuffle array (Fisher-Yates)
@@ -685,7 +625,6 @@
 
     // Render game interface
     function renderGame() {
-      currentSlide = 0;
       hasSubmitted = false;
       
       // Reset UI
@@ -695,98 +634,37 @@
       document.getElementById('crownIcon').classList.remove('show');
       document.getElementById('scoreText').textContent = 'Score: -';
       
-      // Render slides
-      renderSlides();
-      
-      // Render input boxes
-      renderInputBoxes();
-      
-      // Update navigation
-      updateNavigation();
+      // Render all sentences
+      renderSentences();
     }
 
-    // Render sentence slides
-    function renderSlides() {
-      const container = document.getElementById('slidesContainer');
-      const dotsContainer = document.getElementById('slideDots');
-      
+    // Render all sentence cards
+    function renderSentences() {
+      const container = document.getElementById('sentencesGrid');
       container.innerHTML = '';
-      dotsContainer.innerHTML = '';
       
       scrambledSentences.forEach((sentence, index) => {
-        // Create slide
-        const slide = document.createElement('div');
-        slide.className = `sentence-slide ${index === 0 ? 'active' : ''}`;
+        const card = document.createElement('div');
+        card.className = 'sentence-card';
+        card.id = `card-${index}`;
         
-        // Determine text size based on length
-        let textClass = '';
-        if (sentence.length > 150) textClass = 'very-long';
-        else if (sentence.length > 100) textClass = 'long';
-        
-        slide.innerHTML = `
-          <div class="slide-number">Sentence ${index + 1} of ${scrambledSentences.length}</div>
-          <div class="sentence-text ${textClass}">${sentence}</div>
+        card.innerHTML = `
+          <div class="sentence-label">S${index + 1}</div>
+          <div class="sentence-content">
+            <div class="sentence-text-display">${sentence}</div>
+            <div class="sentence-input">
+              <label>Order</label>
+              <input type="number" 
+                     id="input-${index}" 
+                     min="1" 
+                     max="${scrambledSentences.length}"
+                     placeholder="#">
+            </div>
+          </div>
         `;
         
-        container.appendChild(slide);
-        
-        // Create dot
-        const dot = document.createElement('div');
-        dot.className = `slide-dot ${index === 0 ? 'active' : ''}`;
-        dot.onclick = () => goToSlide(index);
-        dotsContainer.appendChild(dot);
+        container.appendChild(card);
       });
-    }
-
-    // Render input boxes
-    function renderInputBoxes() {
-      const grid = document.getElementById('answerGrid');
-      grid.innerHTML = '';
-      
-      scrambledSentences.forEach((_, index) => {
-        const inputDiv = document.createElement('div');
-        inputDiv.className = 'answer-input';
-        inputDiv.innerHTML = `
-          <label>S${index + 1}</label>
-          <input type="number" 
-                 id="input-${index}" 
-                 min="1" 
-                 max="${scrambledSentences.length}"
-                 placeholder="${index + 1}">
-        `;
-        grid.appendChild(inputDiv);
-      });
-    }
-
-    // Navigate slides
-    function navigateSlide(direction) {
-      const newSlide = currentSlide + direction;
-      if (newSlide >= 0 && newSlide < scrambledSentences.length) {
-        goToSlide(newSlide);
-      }
-    }
-
-    function goToSlide(index) {
-      currentSlide = index;
-      
-      // Update slides
-      const slides = document.querySelectorAll('.sentence-slide');
-      slides.forEach((slide, i) => {
-        slide.classList.toggle('active', i === index);
-      });
-      
-      // Update dots
-      const dots = document.querySelectorAll('.slide-dot');
-      dots.forEach((dot, i) => {
-        dot.classList.toggle('active', i === index);
-      });
-      
-      updateNavigation();
-    }
-
-    function updateNavigation() {
-      document.getElementById('prevBtn').disabled = currentSlide === 0;
-      document.getElementById('nextBtn').disabled = currentSlide === scrambledSentences.length - 1;
     }
 
     // Check answer
@@ -829,15 +707,15 @@
         const userPosition = userAnswers[scrambledIndex];
         const correctPosition = sentences.indexOf(scrambledSentence) + 1; // 1-indexed
         
-        const inputDiv = document.getElementById(`input-${scrambledIndex}`).parentElement;
+        const card = document.getElementById(`card-${scrambledIndex}`);
         
         if (userPosition === correctPosition) {
           correctCount++;
-          inputDiv.classList.add('correct');
-          inputDiv.classList.remove('incorrect');
+          card.classList.add('correct');
+          card.classList.remove('incorrect');
         } else {
-          inputDiv.classList.add('incorrect');
-          inputDiv.classList.remove('correct');
+          card.classList.add('incorrect');
+          card.classList.remove('correct');
         }
       });
       
@@ -882,9 +760,9 @@
       // Clear inputs and colors
       scrambledSentences.forEach((_, index) => {
         const input = document.getElementById(`input-${index}`);
-        const inputDiv = input.parentElement;
+        const card = document.getElementById(`card-${index}`);
         input.value = '';
-        inputDiv.classList.remove('correct', 'incorrect');
+        card.classList.remove('correct', 'incorrect');
       });
       
       // Hide results
