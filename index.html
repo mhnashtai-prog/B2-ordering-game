@@ -718,7 +718,8 @@
                      max="${scrambledSentences.length}"
                      value="${position || ''}"
                      placeholder="#"
-                     onchange="updatePosition(${originalIndex})">
+                     onblur="updatePosition(${originalIndex})"
+                     onkeypress="if(event.key === 'Enter') updatePosition(${originalIndex})">
             </div>
           </div>
         `;
@@ -727,19 +728,21 @@
       });
     }
 
-    // Update position when user changes input
+    // Update position when user finishes entering number (blur or Enter)
     function updatePosition(originalIndex) {
       const input = document.getElementById(`input-${originalIndex}`);
       const value = parseInt(input.value);
       
+      // Only update if valid number
       if (value && value >= 1 && value <= scrambledSentences.length) {
         userPositions[originalIndex] = value;
-      } else {
+        // Re-render to show new order
+        renderSentences();
+      } else if (input.value === '') {
+        // User cleared the input
         delete userPositions[originalIndex];
+        renderSentences();
       }
-      
-      // Re-render to show new order
-      renderSentences();
     }
 
     // Check answer
