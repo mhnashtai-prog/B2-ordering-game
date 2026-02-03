@@ -1,0 +1,935 @@
+{
+  "title": "B2 First - Formal Report Writing",
+  "samples": [
+    {
+      "id": "school-facilities-1",
+      "topic": "School Facilities Assessment",
+      "paragraphs": [
+        {
+          "type": "introduction",
+          "label": "Introduction",
+          "text": "The main objective of this report is to assess the current school facilities. This report is based on a questionnaire conducted among over 200 students."
+        },
+        {
+          "type": "general_overview",
+          "label": "General View",
+          "text": "It is generally agreed that the school provides a pleasant learning environment. The classrooms are in good condition and many students referred to the new IT equipment as helpful for lessons. By far the best aspect of the facilities is the sports hall, which is modern and well-equipped."
+        },
+        {
+          "type": "areas_of_concern",
+          "label": "Problems",
+          "text": "However, one major concern expressed by students is the overcrowded library. By far the worst aspect of the IT facilities is that machines frequently break down. The library is far from ideal since it lacks sufficient seating during exam periods. This is mainly due to the fact that student numbers have increased significantly."
+        },
+        {
+          "type": "recommendation",
+          "label": "Recommendations",
+          "text": "One key recommendation would be to replace outdated computers with modern equipment. In order to maximize study space, I would strongly recommend adding more library seating. It is essential that the school invests in covered outdoor areas."
+        },
+        {
+          "type": "conclusion",
+          "label": "Conclusion",
+          "text": "Taking everything into account, it seems clear that these improvements would significantly enhance the learning environment for all students."
+        }
+      ]
+    },
+    {
+      "id": "school-facilities-2",
+      "topic": "School Facilities Assessment",
+      "paragraphs": [
+        {
+          "type": "introduction",
+          "label": "Introduction",
+          "text": "This report focuses on assessing school facilities and suggesting improvements. The information presented was collected through student surveys."
+        },
+        {
+          "type": "positive_aspects",
+          "label": "Positive Aspects",
+          "text": "There is a broad consensus that the school offers a good learning environment. What makes the library so valuable is that it provides a wide selection of resources. One positive aspect of the facilities is the sports hall. The highlight of the school is the recently upgraded IT equipment."
+        },
+        {
+          "type": "areas_for_improvement",
+          "label": "Areas for Improvement",
+          "text": "One major criticism expressed by many students is the overcrowded library during exams. Computer facilities are far from ideal, considering that machines often malfunction. The toilet facilities are outdated. This is mainly because no renovations have been done for over ten years."
+        },
+        {
+          "type": "recommendation",
+          "label": "Recommendations",
+          "text": "If we were to improve facilities, one key recommendation would be to modernize computer equipment urgently. I would strongly recommend extending library hours and adding more seating. It is essential that toilets are renovated soon."
+        },
+        {
+          "type": "conclusion",
+          "label": "Conclusion",
+          "text": "The main conclusion to be drawn is that while facilities are adequate, improvements are necessary. To sum up, these changes would benefit all students."
+        }
+      ]
+    },
+    {
+      "id": "school-facilities-3",
+      "topic": "School Facilities Assessment",
+      "paragraphs": [
+        {
+          "type": "introduction",
+          "label": "Introduction",
+          "text": "The primary aim of this report is to evaluate current facilities and propose improvements. The findings in this report are drawn from comprehensive feedback provided by 215 students."
+        },
+        {
+          "type": "general_overview",
+          "label": "General Overview",
+          "text": "It was generally felt that the school provides satisfactory facilities overall. Classrooms are well-equipped and properly maintained. There was broad agreement that recent technology investments have been beneficial for learning."
+        },
+        {
+          "type": "criticisms",
+          "label": "Criticisms",
+          "text": "However, one concern raised by numerous students involves library capacity during exam periods. The worst part of using computers is that they crash frequently, which affects coursework completion. Toilet facilities require urgent attention."
+        },
+        {
+          "type": "recommendation",
+          "label": "Recommendations",
+          "text": "In order to address these issues, I would recommend purchasing additional computers and library furniture. One way to improve would be extending library hours until 5pm. It would be advisable to renovate toilets during summer holidays."
+        },
+        {
+          "type": "conclusion",
+          "label": "Conclusion",
+          "text": "In conclusion, as can be seen, strategic improvements would enhance student experience. Overall, implementing these recommendations should be a priority for the school."
+        }
+      ]
+    },
+    {
+      "id": "exchange-programme-1",
+      "topic": "Student Exchange Programme",
+      "paragraphs": [
+        {
+          "type": "introduction",
+          "label": "Introduction",
+          "text": "The main objective of this report is to assess the two-week exchange programme in Spain and recommend whether it should continue. This report is based on feedback collected from participating students after the visit."
+        },
+        {
+          "type": "general_overview",
+          "label": "Accommodation and School Activities",
+          "text": "It was generally felt that host families were welcoming and provided comfortable accommodation. Students attended regular lessons, joined group projects and took part in cultural activities. One positive aspect of the programme was the supportive attitude of teachers, who encouraged students to participate actively."
+        },
+        {
+          "type": "learning_outcomes",
+          "label": "What Students Learned",
+          "text": "What made the experience so valuable is that students had to communicate in Spanish every day in real-life situations. Many participants reported improved confidence, greater independence and a better understanding of Spanish culture. As a result, students became more willing to speak even when they made mistakes."
+        },
+        {
+          "type": "recommendation",
+          "label": "Recommendations",
+          "text": "I would strongly recommend continuing the exchange programme because the educational benefits are clear. One key recommendation would be to organise more mixed-group activities after school so that visiting students spend more time together."
+        },
+        {
+          "type": "conclusion",
+          "label": "Conclusion",
+          "text": "Taking everything into account, it seems clear that the programme should be offered again next year as it provides invaluable learning experiences."
+        }
+      ]
+    },
+    {
+      "id": "exchange-programme-2",
+      "topic": "Student Exchange Programme",
+      "paragraphs": [
+        {
+          "type": "introduction",
+          "label": "Introduction",
+          "text": "This report focuses on evaluating the exchange programme in Spain and deciding whether it should be continued. The information presented was collected through questionnaires and discussions with students and teachers."
+        },
+        {
+          "type": "strengths",
+          "label": "Strengths of the Programme",
+          "text": "There is broad agreement that accommodation with host families was a major strength, as students felt safe and included in daily routines. School activities were well organised, and one feature that was highly appreciated was project work, which encouraged teamwork and communication. Cultural visits also helped students understand local traditions."
+        },
+        {
+          "type": "concerns",
+          "label": "Learning Outcomes and Concerns",
+          "text": "What makes this programme especially effective is that learners practise the language in authentic settings, which improves fluency and listening ability. Many participants also reported increased motivation. However, one major concern expressed by students is that some participants had limited contact with other exchange students after lessons."
+        },
+        {
+          "type": "recommendation",
+          "label": "Recommendations",
+          "text": "If the programme is continued, one key recommendation would be to introduce regular mixed-group events such as sports sessions or city walks. It is essential that students receive clear guidance on meeting points, transport and emergency contacts."
+        },
+        {
+          "type": "conclusion",
+          "label": "Conclusion",
+          "text": "To sum up, the programme should continue, as the advantages clearly outweigh the difficulties. The main conclusion to be drawn is that students benefit greatly from this experience."
+        }
+      ]
+    },
+    {
+      "id": "exchange-programme-3",
+      "topic": "Student Exchange Programme",
+      "paragraphs": [
+        {
+          "type": "introduction",
+          "label": "Introduction",
+          "text": "The primary aim of this report is to evaluate the two-week exchange programme in Spain and recommend future action. The findings in this report are drawn from detailed feedback provided by participants and accompanying staff."
+        },
+        {
+          "type": "general_overview",
+          "label": "Accommodation and Organisation",
+          "text": "It was generally felt that accommodation standards were high and host families provided considerable support. The school programme included regular lessons and structured activities. There was broad agreement that staff supervision and communication were effective throughout the visit."
+        },
+        {
+          "type": "concerns",
+          "label": "Educational Value and Concerns",
+          "text": "What made the exchange particularly beneficial was that students used Spanish continuously, both at school and in the community. Participants reported improved fluency and stronger listening skills. However, one concern raised by several students was the limited number of organised group activities after school hours."
+        },
+        {
+          "type": "recommendation",
+          "label": "Recommendations",
+          "text": "In order to address these issues, I would recommend scheduling daily mixed-group events, such as shared projects or guided visits. It would be advisable to provide a clear timetable and practical travel guidance before departure."
+        },
+        {
+          "type": "conclusion",
+          "label": "Conclusion",
+          "text": "It is essential that the programme continues, as its educational benefits are significant. In conclusion, as can be seen, the exchange programme offers substantial language and personal development opportunities."
+        }
+      ]
+    },
+    {
+      "id": "sports-facilities-1",
+      "topic": "Sports Centre Evaluation",
+      "paragraphs": [
+        {
+          "type": "introduction",
+          "label": "Introduction",
+          "text": "The main objective of this report is to assess the local sports centre and suggest improvements for young users. This report is based on feedback collected from teenage members and occasional visitors."
+        },
+        {
+          "type": "general_overview",
+          "label": "Current Facilities",
+          "text": "It is generally agreed that the centre offers a good range of facilities, including a gym, a swimming pool and several courts for team sports. One positive aspect of the centre is the variety of group classes, such as dance fitness and beginner training sessions."
+        },
+        {
+          "type": "areas_of_concern",
+          "label": "Problems",
+          "text": "However, a common complaint relates to overcrowding after 5 p.m., when many students arrive. As a result, users often have to wait for machines or leave early. By far the worst aspect of the centre is the changing rooms, which are small and outdated. This is mainly due to the fact that the building has not been renovated for several years."
+        },
+        {
+          "type": "recommendation",
+          "label": "Recommendations",
+          "text": "One key recommendation would be to improve the changing rooms by adding lockers and increasing cleanliness checks. In order to reduce overcrowding, it may be worth considering student-only time slots or extending opening hours on weekdays."
+        },
+        {
+          "type": "conclusion",
+          "label": "Conclusion",
+          "text": "Taking everything into account, it seems clear that these changes would make the centre more attractive to young people and encourage healthier lifestyles."
+        }
+      ]
+    },
+    {
+      "id": "sports-facilities-2",
+      "topic": "Sports Centre Evaluation",
+      "paragraphs": [
+        {
+          "type": "introduction",
+          "label": "Introduction",
+          "text": "This report focuses on evaluating the local sports centre and proposing improvements aimed at teenage users. The information presented was collected through questionnaires and brief interviews with regular members."
+        },
+        {
+          "type": "strengths",
+          "label": "Strengths",
+          "text": "There is broad agreement that the centre provides good value for money and offers modern equipment in the gym area. By far the best aspect of the sports centre is the swimming pool, which is clean, well supervised and suitable for different ability levels. One feature that was highly appreciated was the range of weekly classes available at a reasonable price."
+        },
+        {
+          "type": "areas_for_improvement",
+          "label": "Areas for Improvement",
+          "text": "One major criticism expressed by teenage users concerns overcrowding in the gym during peak hours. The facilities are far from ideal at these times, as it is difficult to access popular machines. In addition, the changing rooms need attention. This is mainly because they are outdated and not designed for the current number of users."
+        },
+        {
+          "type": "recommendation",
+          "label": "Recommendations",
+          "text": "If the council wishes to improve the service, one key recommendation would be to introduce a booking system for busy hours and provide clearer information about quieter times. I would strongly recommend renovating the changing rooms and adding more lockers."
+        },
+        {
+          "type": "conclusion",
+          "label": "Conclusion",
+          "text": "To sum up, these changes would significantly improve the experience for young people and increase membership among teenagers."
+        }
+      ]
+    },
+    {
+      "id": "sports-facilities-3",
+      "topic": "Sports Centre Evaluation",
+      "paragraphs": [
+        {
+          "type": "introduction",
+          "label": "Introduction",
+          "text": "The primary aim of this report is to evaluate the local sports centre and propose improvements for teenage users. The findings in this report are drawn from feedback provided by 120 young members and observations from staff."
+        },
+        {
+          "type": "general_overview",
+          "label": "General Overview",
+          "text": "It was generally felt that the centre offers a wide range of activities, including swimming, fitness training and indoor sports. There was broad agreement that staff are professional and the gym equipment is largely in good condition."
+        },
+        {
+          "type": "concerns",
+          "label": "Concerns",
+          "text": "However, one concern raised by many respondents relates to overcrowding during weekday evenings. The worst part of using the gym at these times is that machines are often unavailable, which affects the quality of training. Furthermore, changing facilities require modernisation in order to meet current demands."
+        },
+        {
+          "type": "recommendation",
+          "label": "Recommendations",
+          "text": "In order to address these issues, I would recommend introducing a booking system for peak hours and expanding beginner-friendly classes for teenagers. It would be advisable to renovate the changing rooms and improve locker availability."
+        },
+        {
+          "type": "conclusion",
+          "label": "Conclusion",
+          "text": "In conclusion, as can be seen, targeted improvements would significantly enhance the centre's appeal for young users and promote greater participation in sports."
+        }
+      ]
+    },
+    {
+      "id": "school-trip-1",
+      "topic": "Educational School Trip",
+      "paragraphs": [
+        {
+          "type": "introduction",
+          "label": "Introduction",
+          "text": "The main objective of this report is to evaluate the recent school trip and suggest improvements for future visits. This report is based on feedback collected from students and accompanying teachers."
+        },
+        {
+          "type": "general_overview",
+          "label": "Accommodation and Activities",
+          "text": "It was generally felt that the accommodation was comfortable and suitable for a school group. The programme included guided tours, workshops and evening activities. One positive aspect of the trip was the variety of activities, which kept students engaged throughout the stay."
+        },
+        {
+          "type": "concerns",
+          "label": "Problems and Enjoyment",
+          "text": "By far the best aspect of the trip was the interactive workshop, which helped students understand the topic more clearly. However, a common complaint relates to the long travel time, which caused tiredness on the first day. As a result, some students found it difficult to concentrate during afternoon activities."
+        },
+        {
+          "type": "recommendation",
+          "label": "Recommendations",
+          "text": "One key recommendation would be to plan an earlier departure time to reduce fatigue. In order to improve the overall experience, it may be worth considering including more free time in the evening."
+        },
+        {
+          "type": "conclusion",
+          "label": "Conclusion",
+          "text": "Taking everything into account, it seems clear that the trip was successful but could be improved with better planning and timing."
+        }
+      ]
+    },
+    {
+      "id": "school-trip-2",
+      "topic": "Educational School Trip",
+      "paragraphs": [
+        {
+          "type": "introduction",
+          "label": "Introduction",
+          "text": "This report focuses on assessing the organisation, accommodation and activities of the recent school trip. The information presented was collected through questionnaires completed by participating students."
+        },
+        {
+          "type": "strengths",
+          "label": "Strengths of the Trip",
+          "text": "There is broad agreement that the accommodation met expectations and staff at the venue were helpful. What made the trip particularly successful was that activities were closely linked to subjects studied in class. Many students found the guided tour especially informative."
+        },
+        {
+          "type": "areas_for_improvement",
+          "label": "Areas for Improvement",
+          "text": "One major criticism expressed by students concerns the tight schedule, which allowed little time for rest. This is mainly because too many activities were planned in a short period. Consequently, some students felt exhausted by the end of the trip."
+        },
+        {
+          "type": "recommendation",
+          "label": "Recommendations",
+          "text": "If similar trips are organised in the future, one key recommendation would be to reduce the number of daily activities. I would strongly recommend including optional evening sessions so students can choose how to spend their time."
+        },
+        {
+          "type": "conclusion",
+          "label": "Conclusion",
+          "text": "To sum up, better pacing would greatly improve the experience and ensure students benefit fully from future trips."
+        }
+      ]
+    },
+    {
+      "id": "school-trip-3",
+      "topic": "Educational School Trip",
+      "paragraphs": [
+        {
+          "type": "introduction",
+          "label": "Introduction",
+          "text": "The primary aim of this report is to evaluate the educational value of the recent school trip and propose improvements. The findings in this report are drawn from written feedback provided by students and staff."
+        },
+        {
+          "type": "general_overview",
+          "label": "General Overview",
+          "text": "It was generally felt that accommodation standards were satisfactory and safety procedures were well managed. There was broad agreement that the planned activities were relevant and educational."
+        },
+        {
+          "type": "concerns",
+          "label": "Concerns",
+          "text": "However, one concern raised by several participants relates to noise levels at night, which affected sleep. The worst part of the accommodation was the lack of clear quiet hours, which resulted in tiredness during morning sessions."
+        },
+        {
+          "type": "recommendation",
+          "label": "Recommendations",
+          "text": "In order to address these issues, I would recommend setting clear rules regarding quiet time and staff supervision at night. It would be advisable to include a short briefing on behaviour before departure."
+        },
+        {
+          "type": "conclusion",
+          "label": "Conclusion",
+          "text": "In conclusion, as can be seen, small organisational changes would significantly improve future trips and enhance the educational experience."
+        }
+      ]
+    },
+    {
+      "id": "library-services-1",
+      "topic": "Library Services Review",
+      "paragraphs": [
+        {
+          "type": "introduction",
+          "label": "Introduction",
+          "text": "The main objective of this report is to assess current library services and suggest improvements. This report is based on feedback collected from students who regularly use the library."
+        },
+        {
+          "type": "general_overview",
+          "label": "Current Services",
+          "text": "It is generally agreed that the library provides a quiet and comfortable place for study. It offers a wide range of books, access to computers and space for group work. One positive aspect of the service is the helpful librarian, who supports students with research tasks."
+        },
+        {
+          "type": "areas_of_concern",
+          "label": "Problems",
+          "text": "However, one major concern expressed by students is the limited number of seats during exam periods. By far the worst aspect of the service is the early closing time, which prevents many students from studying after school. This is mainly due to the fact that there is not enough staff to supervise longer hours."
+        },
+        {
+          "type": "recommendation",
+          "label": "Recommendations",
+          "text": "One key recommendation would be to extend opening hours twice a week during exam periods. In order to improve study conditions, it may be worth considering adding more desks and chairs."
+        },
+        {
+          "type": "conclusion",
+          "label": "Conclusion",
+          "text": "Taking everything into account, it seems clear that these changes would benefit a large number of students and improve academic performance."
+        }
+      ]
+    },
+    {
+      "id": "library-services-2",
+      "topic": "Library Services Review",
+      "paragraphs": [
+        {
+          "type": "introduction",
+          "label": "Introduction",
+          "text": "This report focuses on evaluating library services, resources and access. The information presented was collected through questionnaires completed by students from different year groups."
+        },
+        {
+          "type": "strengths",
+          "label": "Strengths",
+          "text": "There is broad agreement that the library is well organised and supports independent learning. What makes the library so valuable is that it offers both silent study areas and spaces for collaborative work. The digital resources are also widely used."
+        },
+        {
+          "type": "areas_for_improvement",
+          "label": "Areas for Improvement",
+          "text": "One major criticism expressed by students concerns outdated computers, which often freeze. The service is far from ideal during busy periods, as printing queues become long. As a result, students lose valuable study time."
+        },
+        {
+          "type": "recommendation",
+          "label": "Recommendations",
+          "text": "If improvements are to be made, one key recommendation would be to replace older computers and improve the printing system. I would strongly recommend providing short training sessions on using online academic resources."
+        },
+        {
+          "type": "conclusion",
+          "label": "Conclusion",
+          "text": "To sum up, these changes would significantly enhance the quality of library services and support student learning."
+        }
+      ]
+    },
+    {
+      "id": "library-services-3",
+      "topic": "Library Services Review",
+      "paragraphs": [
+        {
+          "type": "introduction",
+          "label": "Introduction",
+          "text": "The primary aim of this report is to evaluate the effectiveness of current library services and propose improvements. The findings in this report are drawn from detailed feedback provided by students and teaching staff."
+        },
+        {
+          "type": "general_overview",
+          "label": "General Overview",
+          "text": "It was generally felt that the library plays an important role in supporting academic work. There was broad agreement that the range of textbooks and reference materials is appropriate for most subjects."
+        },
+        {
+          "type": "concerns",
+          "label": "Concerns",
+          "text": "However, one concern raised by many students involves limited seating and restricted access during peak times. The worst part of using the library at these times is the lack of available workspaces, which affects students' ability to revise effectively."
+        },
+        {
+          "type": "recommendation",
+          "label": "Recommendations",
+          "text": "In order to address these issues, I would recommend reorganising the layout to create additional study areas. It would be advisable to extend opening hours before examinations."
+        },
+        {
+          "type": "conclusion",
+          "label": "Conclusion",
+          "text": "In conclusion, as can be seen, targeted improvements would significantly enhance student access and satisfaction with library services."
+        }
+      ]
+    },
+    {
+      "id": "work-experience-1",
+      "topic": "Student Work Experience",
+      "paragraphs": [
+        {
+          "type": "introduction",
+          "label": "Introduction",
+          "text": "The main objective of this report is to evaluate my recent work experience placement and recommend whether it should continue. This report is based on my daily observations and feedback from my supervisor."
+        },
+        {
+          "type": "general_overview",
+          "label": "Company and Tasks",
+          "text": "The placement took place at a local company where I assisted staff with basic administrative tasks and customer service. It was generally felt that employees were supportive and willing to explain procedures. One positive aspect of the placement was being trusted with real responsibilities."
+        },
+        {
+          "type": "learning_outcomes",
+          "label": "Skills Developed",
+          "text": "What made the placement so valuable is that I developed communication and teamwork skills in a real working environment. I also learned how to manage my time more effectively. As a result, I became more confident when dealing with unfamiliar tasks."
+        },
+        {
+          "type": "recommendation",
+          "label": "Recommendations",
+          "text": "I would strongly recommend continuing this placement because it provides practical experience and prepares students for future employment. One key recommendation would be to introduce a wider variety of tasks so students remain motivated."
+        },
+        {
+          "type": "conclusion",
+          "label": "Conclusion",
+          "text": "Taking everything into account, it seems clear that the placement offers clear benefits and should definitely continue."
+        }
+      ]
+    },
+    {
+      "id": "work-experience-2",
+      "topic": "Student Work Experience",
+      "paragraphs": [
+        {
+          "type": "introduction",
+          "label": "Introduction",
+          "text": "This report focuses on assessing the value of a recent work experience placement. The information presented was collected through feedback from supervisors and participating students."
+        },
+        {
+          "type": "general_overview",
+          "label": "Placement Overview",
+          "text": "Students were placed in a range of local businesses and were involved in basic tasks such as organising materials and supporting staff. There is broad agreement that the placements provided a realistic insight into working life."
+        },
+        {
+          "type": "concerns",
+          "label": "Learning Outcomes",
+          "text": "By far the best aspect of the placement was the opportunity to develop communication skills and workplace confidence. However, one major concern expressed by students is that some tasks became repetitive after several days. As a result, motivation decreased slightly towards the end."
+        },
+        {
+          "type": "recommendation",
+          "label": "Recommendations",
+          "text": "If the programme is continued, one key recommendation would be to encourage employers to provide a wider range of tasks. It is essential that students receive clear guidance and support throughout the placement."
+        },
+        {
+          "type": "conclusion",
+          "label": "Conclusion",
+          "text": "To sum up, the experience remains valuable despite minor issues and should be offered to future students."
+        }
+      ]
+    },
+    {
+      "id": "work-experience-3",
+      "topic": "Student Work Experience",
+      "paragraphs": [
+        {
+          "type": "introduction",
+          "label": "Introduction",
+          "text": "The primary aim of this report is to evaluate the effectiveness of the work experience programme. The findings in this report are drawn from written feedback provided by students and employers."
+        },
+        {
+          "type": "general_overview",
+          "label": "General Overview",
+          "text": "It was generally felt that the placement helped students understand workplace expectations. There was broad agreement that supervision was appropriate and tasks were suitable for students of this age."
+        },
+        {
+          "type": "concerns",
+          "label": "Concerns",
+          "text": "However, one concern raised by several participants relates to the limited variety of tasks in certain placements. The worst part of these placements was the lack of challenge, which affects student engagement and learning."
+        },
+        {
+          "type": "recommendation",
+          "label": "Recommendations",
+          "text": "In order to address these issues, I would recommend setting clearer expectations for employers before placements begin. It would be advisable to include a short project task to encourage independent work."
+        },
+        {
+          "type": "conclusion",
+          "label": "Conclusion",
+          "text": "In conclusion, as can be seen, with small adjustments the programme should continue as it offers valuable workplace experience."
+        }
+      ]
+    },
+    {
+      "id": "cafeteria-services-1",
+      "topic": "Cafeteria Services Review",
+      "paragraphs": [
+        {
+          "type": "introduction",
+          "label": "Introduction",
+          "text": "The main objective of this report is to assess the school cafeteria and suggest improvements. This report is based on feedback collected from students who regularly use the service."
+        },
+        {
+          "type": "general_overview",
+          "label": "Current Services",
+          "text": "It is generally agreed that the cafeteria offers affordable meals and friendly service. There is a daily hot meal, as well as sandwiches and snacks. One positive aspect of the cafeteria is that it saves students time during the school day."
+        },
+        {
+          "type": "areas_of_concern",
+          "label": "Problems",
+          "text": "However, one major concern expressed by students is the long queues at lunchtime. By far the worst aspect of the cafeteria is the limited seating, which forces some students to eat quickly or stand. This is mainly due to the fact that several year groups have lunch at the same time."
+        },
+        {
+          "type": "recommendation",
+          "label": "Recommendations",
+          "text": "One key recommendation would be to introduce staggered lunch times to reduce queues. In order to improve comfort, it may be worth considering adding more tables or using an additional room for seating."
+        },
+        {
+          "type": "conclusion",
+          "label": "Conclusion",
+          "text": "Taking everything into account, it seems clear that these changes would improve student satisfaction and make lunchtime more enjoyable."
+        }
+      ]
+    },
+    {
+      "id": "cafeteria-services-2",
+      "topic": "Cafeteria Services Review",
+      "paragraphs": [
+        {
+          "type": "introduction",
+          "label": "Introduction",
+          "text": "This report focuses on evaluating food quality, service efficiency and seating in the school cafeteria. The information presented was collected through questionnaires completed by students from different year groups."
+        },
+        {
+          "type": "strengths",
+          "label": "Strengths",
+          "text": "There is broad agreement that the cafeteria provides good value for money and that staff are polite and helpful. What makes the service particularly useful is that students have access to a hot meal every day."
+        },
+        {
+          "type": "areas_for_improvement",
+          "label": "Areas for Improvement",
+          "text": "One major criticism expressed by students relates to the lack of healthy options, such as fresh fruit and salads. The menu is far from ideal for those who want a balanced diet. As a result, many students choose snacks instead of full meals."
+        },
+        {
+          "type": "recommendation",
+          "label": "Recommendations",
+          "text": "If improvements are to be made, one key recommendation would be to introduce a wider range of healthy options. I would strongly recommend displaying nutritional information to help students make informed choices."
+        },
+        {
+          "type": "conclusion",
+          "label": "Conclusion",
+          "text": "To sum up, these changes would encourage healthier eating habits and improve overall satisfaction with cafeteria services."
+        }
+      ]
+    },
+    {
+      "id": "cafeteria-services-3",
+      "topic": "Cafeteria Services Review",
+      "paragraphs": [
+        {
+          "type": "introduction",
+          "label": "Introduction",
+          "text": "The primary aim of this report is to evaluate the effectiveness of cafeteria services and propose improvements. The findings in this report are drawn from detailed feedback provided by students and staff."
+        },
+        {
+          "type": "general_overview",
+          "label": "General Overview",
+          "text": "It was generally felt that food quality is acceptable and prices are reasonable. There was broad agreement that service is efficient outside peak times."
+        },
+        {
+          "type": "concerns",
+          "label": "Concerns",
+          "text": "However, one concern raised by many students involves overcrowding during lunch breaks. The worst part of the service is the lack of available seating, which affects students' ability to relax and eat properly."
+        },
+        {
+          "type": "recommendation",
+          "label": "Recommendations",
+          "text": "In order to address these issues, I would recommend reorganising lunch schedules and expanding seating capacity. It would be advisable to review the menu and include more nutritious options."
+        },
+        {
+          "type": "conclusion",
+          "label": "Conclusion",
+          "text": "In conclusion, as can be seen, targeted improvements would greatly enhance the cafeteria experience for all students."
+        }
+      ]
+    },
+    {
+      "id": "environmental-initiative-1",
+      "topic": "Environmental Project Review",
+      "paragraphs": [
+        {
+          "type": "introduction",
+          "label": "Introduction",
+          "text": "The main objective of this report is to evaluate the recent school environmental initiative and recommend whether similar projects should be organised in the future. This report is based on feedback collected from students and teachers involved in the project."
+        },
+        {
+          "type": "general_overview",
+          "label": "Project Activities",
+          "text": "The initiative included a recycling campaign, a litter-picking day and short presentations during form time. It was generally felt that student participation was high, particularly among younger year groups. One positive aspect of the project was the clear organisation of activities."
+        },
+        {
+          "type": "concerns",
+          "label": "Achievements and Difficulties",
+          "text": "By far the best aspect of the initiative was the increased awareness of environmental issues among students. However, one major concern expressed by participants is that some recycling bins were not emptied regularly. As a result, this discouraged students from using them correctly."
+        },
+        {
+          "type": "recommendation",
+          "label": "Recommendations",
+          "text": "One key recommendation would be to appoint a small eco-team to monitor recycling areas weekly. In order to increase motivation, it may be worth considering organising competitions between classes."
+        },
+        {
+          "type": "conclusion",
+          "label": "Conclusion",
+          "text": "Taking everything into account, it seems clear that similar projects should be repeated as they raise environmental awareness effectively."
+        }
+      ]
+    },
+    {
+      "id": "environmental-initiative-2",
+      "topic": "Environmental Project Review",
+      "paragraphs": [
+        {
+          "type": "introduction",
+          "label": "Introduction",
+          "text": "This report focuses on assessing the effectiveness of the school environmental project. The information presented was collected through questionnaires completed by participating students and staff."
+        },
+        {
+          "type": "strengths",
+          "label": "Strengths of the Initiative",
+          "text": "There is broad agreement that the project successfully raised awareness of environmental responsibility. What made the initiative particularly effective is that activities were practical and easy to join, such as recycling challenges and clean-up events."
+        },
+        {
+          "type": "challenges",
+          "label": "Challenges",
+          "text": "One major criticism expressed by students relates to the lack of consistent support from all classes. This is mainly because some teachers were not fully informed about the project aims. Consequently, participation levels varied."
+        },
+        {
+          "type": "recommendation",
+          "label": "Recommendations",
+          "text": "If similar initiatives are planned, one key recommendation would be to provide clear guidelines for staff before the project begins. I would strongly recommend introducing a short assembly to explain objectives and encourage whole-school involvement."
+        },
+        {
+          "type": "conclusion",
+          "label": "Conclusion",
+          "text": "To sum up, the project was successful but could be improved with better communication and planning."
+        }
+      ]
+    },
+    {
+      "id": "environmental-initiative-3",
+      "topic": "Environmental Project Review",
+      "paragraphs": [
+        {
+          "type": "introduction",
+          "label": "Introduction",
+          "text": "The primary aim of this report is to evaluate the outcomes of the school environmental initiative and propose future action. The findings in this report are drawn from detailed feedback provided by student volunteers and teaching staff."
+        },
+        {
+          "type": "general_overview",
+          "label": "General Overview",
+          "text": "It was generally felt that the project was well organised and achieved its main objectives. There was broad agreement that student awareness of recycling and waste reduction improved significantly."
+        },
+        {
+          "type": "concerns",
+          "label": "Concerns",
+          "text": "However, one concern raised by several participants involves insufficient resources, such as gloves and bags, during the clean-up day. The worst part of this situation was that some students were unable to participate fully, which affected overall engagement."
+        },
+        {
+          "type": "recommendation",
+          "label": "Recommendations",
+          "text": "In order to address these issues, I would recommend preparing materials earlier and seeking support from local organisations. It would be advisable to involve the Student Council in planning future initiatives."
+        },
+        {
+          "type": "conclusion",
+          "label": "Conclusion",
+          "text": "In conclusion, as can be seen, repeating the project would be beneficial with improved preparation and resource management."
+        }
+      ]
+    },
+    {
+      "id": "youth-club-1",
+      "topic": "Youth Club Facilities and Activities",
+      "paragraphs": [
+        {
+          "type": "introduction",
+          "label": "Introduction",
+          "text": "The main objective of this report is to assess the local youth club and suggest improvements. This report is based on feedback collected from teenage users of the club."
+        },
+        {
+          "type": "general_overview",
+          "label": "Current Activities and Facilities",
+          "text": "The youth club offers table tennis, board games, a small café area and occasional workshops. It is generally agreed that the club provides a safe place for teenagers to meet after school. One positive aspect of the club is the friendly and supportive staff."
+        },
+        {
+          "type": "concerns",
+          "label": "What Works Well and Problems",
+          "text": "By far the best aspect of the youth club is its relaxed atmosphere, which helps young people feel comfortable. However, a common complaint relates to the limited range of activities for older teenagers. As a result, many students stop attending after the age of sixteen."
+        },
+        {
+          "type": "recommendation",
+          "label": "Recommendations",
+          "text": "One key recommendation would be to introduce activities aimed at older teenagers, such as music production or digital skills workshops. In order to increase participation, it may be worth considering allowing users to suggest and help organise activities."
+        },
+        {
+          "type": "conclusion",
+          "label": "Conclusion",
+          "text": "Taking everything into account, it seems clear that these changes would broaden the club's appeal and attract more teenage users."
+        }
+      ]
+    },
+    {
+      "id": "youth-club-2",
+      "topic": "Youth Club Facilities and Activities",
+      "paragraphs": [
+        {
+          "type": "introduction",
+          "label": "Introduction",
+          "text": "This report focuses on evaluating the facilities, activities and overall atmosphere of the youth club. The information presented was collected through questionnaires and informal discussions with regular visitors."
+        },
+        {
+          "type": "strengths",
+          "label": "Strengths",
+          "text": "There is broad agreement that the youth club offers a safe and welcoming environment. What makes the club particularly valuable is that it provides supervised activities during the evening. The sports and games areas are especially popular with younger users."
+        },
+        {
+          "type": "areas_for_improvement",
+          "label": "Areas for Improvement",
+          "text": "One major criticism expressed by older teenagers concerns the poor condition of some equipment. Several items are far from ideal, as they are broken or outdated. This has resulted in frustration and reduced attendance."
+        },
+        {
+          "type": "recommendation",
+          "label": "Recommendations",
+          "text": "If improvements are to be made, one key recommendation would be to replace damaged equipment and improve seating areas. I would strongly recommend introducing a suggestion box or regular meetings so users can contribute ideas."
+        },
+        {
+          "type": "conclusion",
+          "label": "Conclusion",
+          "text": "To sum up, these steps would significantly improve satisfaction and encourage greater participation among teenagers."
+        }
+      ]
+    },
+    {
+      "id": "youth-club-3",
+      "topic": "Youth Club Facilities and Activities",
+      "paragraphs": [
+        {
+          "type": "introduction",
+          "label": "Introduction",
+          "text": "The primary aim of this report is to evaluate how effectively the youth club meets the needs of local teenagers. The findings in this report are drawn from structured feedback provided by users and staff."
+        },
+        {
+          "type": "general_overview",
+          "label": "General Overview",
+          "text": "It was generally felt that the club plays an important role in providing a safe social space. There was broad agreement that the facilities are suitable for younger teenagers but less appealing to older users."
+        },
+        {
+          "type": "concerns",
+          "label": "Concerns",
+          "text": "However, one concern raised by many respondents involves limited opening hours at weekends. The worst part of this situation is that teenagers often meet elsewhere instead, which affects the club's role in the community."
+        },
+        {
+          "type": "recommendation",
+          "label": "Recommendations",
+          "text": "In order to address these issues, I would recommend extending weekend opening hours and introducing sessions specifically for older teenagers. It would be advisable to review activities regularly to reflect changing interests."
+        },
+        {
+          "type": "conclusion",
+          "label": "Conclusion",
+          "text": "In conclusion, as can be seen, targeted improvements would strengthen the club's impact and better serve the local community."
+        }
+      ]
+    },
+    {
+      "id": "language-course-1",
+      "topic": "Language Course Review",
+      "paragraphs": [
+        {
+          "type": "introduction",
+          "label": "Introduction",
+          "text": "The main objective of this report is to evaluate the summer language course and suggest improvements for future programmes. This report is based on feedback collected from students who attended the course."
+        },
+        {
+          "type": "general_overview",
+          "label": "Teaching Methods and Materials",
+          "text": "The course included daily grammar input, speaking practice and written exercises. It was generally felt that lessons were well structured and teachers were supportive. One positive aspect of the course was the regular use of pair and group work."
+        },
+        {
+          "type": "concerns",
+          "label": "Effectiveness and Problems",
+          "text": "What made the course so effective is that students had frequent opportunities to practise speaking. However, a common complaint relates to the course materials, which some students found repetitive. As a result, motivation decreased slightly during the second week."
+        },
+        {
+          "type": "recommendation",
+          "label": "Recommendations",
+          "text": "One key recommendation would be to introduce more varied materials, such as videos, podcasts and short articles. In order to maintain interest, it may be worth considering including project work and presentations."
+        },
+        {
+          "type": "conclusion",
+          "label": "Conclusion",
+          "text": "Taking everything into account, it seems clear that the course was successful but could be improved with more varied content."
+        }
+      ]
+    },
+    {
+      "id": "language-course-2",
+      "topic": "Language Course Review",
+      "paragraphs": [
+        {
+          "type": "introduction",
+          "label": "Introduction",
+          "text": "This report focuses on evaluating teaching methods, materials and organisation on the summer language course. The information presented was collected through questionnaires completed by participants."
+        },
+        {
+          "type": "strengths",
+          "label": "Strengths of the Course",
+          "text": "There is broad agreement that teachers were knowledgeable and lessons were engaging. By far the best aspect of the course was the emphasis on speaking, which helped students gain confidence. The use of digital tools also supported independent practice."
+        },
+        {
+          "type": "areas_for_improvement",
+          "label": "Areas for Improvement",
+          "text": "One major criticism expressed by students concerns large class sizes, which limited individual feedback. This is mainly because too many learners were placed at the same level. Consequently, some students progressed more slowly than expected."
+        },
+        {
+          "type": "recommendation",
+          "label": "Recommendations",
+          "text": "If improvements are to be made, one key recommendation would be to reduce group sizes or provide an assistant teacher. I would strongly recommend offering short one-to-one feedback sessions at the end of each week."
+        },
+        {
+          "type": "conclusion",
+          "label": "Conclusion",
+          "text": "To sum up, these changes would significantly improve learning outcomes and student satisfaction."
+        }
+      ]
+    },
+    {
+      "id": "language-course-3",
+      "topic": "Language Course Review",
+      "paragraphs": [
+        {
+          "type": "introduction",
+          "label": "Introduction",
+          "text": "The primary aim of this report is to evaluate the effectiveness of the summer language course and propose improvements. The findings in this report are drawn from detailed feedback provided by students and teaching staff."
+        },
+        {
+          "type": "general_overview",
+          "label": "General Overview",
+          "text": "It was generally felt that the course was well organised and met its learning objectives. There was broad agreement that teaching methods encouraged active participation and communication."
+        },
+        {
+          "type": "concerns",
+          "label": "Concerns",
+          "text": "However, one concern raised by several participants involves limited speaking time in some lessons. The worst part of this situation is that quieter students had fewer opportunities to practise, which affects overall confidence development."
+        },
+        {
+          "type": "recommendation",
+          "label": "Recommendations",
+          "text": "In order to address these issues, I would recommend increasing the number of structured speaking activities, such as debates and role plays. It would be advisable to provide clearer progress feedback throughout the course."
+        },
+        {
+          "type": "conclusion",
+          "label": "Conclusion",
+          "text": "In conclusion, as can be seen, the course should continue with minor adjustments to maximize student development."
+        }
+      ]
+    }
+  ]
+}
