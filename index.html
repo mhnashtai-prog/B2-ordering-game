@@ -1,0 +1,927 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>INTUITY GAMES - Sentence Sequencing</title>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700;800;900&family=DM+Sans:wght@400;500;600;700&family=Crimson+Text:wght@400;600;700&display=swap" rel="stylesheet">
+  
+  <style>
+    * { 
+      margin: 0; 
+      padding: 0; 
+      box-sizing: border-box; 
+    }
+
+    body {
+      font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: #0d0d0d;
+      background-image: radial-gradient(circle at 20% 50%, rgba(201, 169, 97, 0.04) 0%, transparent 50%),
+                        radial-gradient(circle at 80% 80%, rgba(201, 169, 97, 0.03) 0%, transparent 50%);
+      color: #e5e5e7;
+      min-height: 100vh;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    .container {
+      max-width: 75rem;
+      margin: 0 auto;
+      padding: 1rem;
+    }
+
+    /* HEADER */
+    .game-header {
+      background: rgba(28, 28, 30, 0.95);
+      backdrop-filter: blur(40px);
+      border-bottom: 1px solid rgba(84, 84, 88, 0.3);
+      padding: 1rem 1.5rem;
+      margin-bottom: 2rem;
+      border-radius: 1rem;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    }
+    
+    .header-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    
+    .brand {
+      display: flex;
+      align-items: baseline;
+      gap: 0.5rem;
+    }
+    
+    .brand-logo {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.6rem;
+      font-weight: 800;
+      background: linear-gradient(135deg, #C9A961 0%, #FFD700 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-transform: uppercase;
+      letter-spacing: -0.04em;
+    }
+    
+    .brand-subtitle {
+      font-size: 0.75rem;
+      color: #C9A961;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+
+    .score-display {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: #C9A961;
+    }
+
+    .crown-icon {
+      font-size: 2rem;
+      opacity: 0;
+      transition: all 0.5s;
+      transform: scale(0.5);
+    }
+
+    .crown-icon.show {
+      opacity: 1;
+      transform: scale(1);
+      animation: crownBounce 0.6s ease-out;
+    }
+
+    @keyframes crownBounce {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.3); }
+    }
+
+    /* GAME SELECTION */
+    .game-select-screen {
+      display: none;
+      text-align: center;
+      padding: 4rem 2rem;
+    }
+
+    .game-select-screen.active {
+      display: block;
+    }
+
+    .select-title {
+      font-family: 'Crimson Text', serif;
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: #e5e5e7;
+      margin-bottom: 1rem;
+    }
+
+    .select-subtitle {
+      font-size: 1.1rem;
+      color: #9ca3af;
+      margin-bottom: 3rem;
+    }
+
+    .content-types {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+      max-width: 60rem;
+      margin: 0 auto;
+    }
+
+    .content-type-card {
+      background: rgba(28, 28, 30, 0.9);
+      border: 2px solid rgba(201, 169, 97, 0.3);
+      border-radius: 1rem;
+      padding: 2rem;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+
+    .content-type-card:hover {
+      transform: translateY(-8px);
+      border-color: rgba(201, 169, 97, 0.6);
+      box-shadow: 0 12px 40px rgba(201, 169, 97, 0.3);
+    }
+
+    .type-icon {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+
+    .type-title {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: #C9A961;
+      margin-bottom: 0.5rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .type-description {
+      font-size: 0.9rem;
+      color: #9ca3af;
+      line-height: 1.5;
+    }
+
+    /* GAME SCREEN */
+    .game-screen {
+      display: none;
+    }
+
+    .game-screen.active {
+      display: block;
+    }
+
+    .game-container {
+      background: linear-gradient(135deg, #f5f1e8 0%, #ede8dc 100%);
+      border-radius: 2rem;
+      padding: 2rem;
+      max-width: 70rem;
+      margin: 0 auto;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+    }
+
+    .game-title {
+      font-family: 'Crimson Text', serif;
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: #1a1a1a;
+      text-align: center;
+      margin-bottom: 2rem;
+      padding-bottom: 1rem;
+      border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+    }
+
+    .game-instructions {
+      background: rgba(201, 169, 97, 0.1);
+      border-left: 4px solid #C9A961;
+      padding: 1rem 1.5rem;
+      margin-bottom: 2rem;
+      border-radius: 0.5rem;
+      font-size: 0.95rem;
+      color: #2a2a2a;
+      line-height: 1.6;
+    }
+
+    /* SLIDE VIEWER */
+    .slide-viewer {
+      background: linear-gradient(145deg, rgba(28, 28, 30, 0.98), rgba(20, 20, 22, 0.98));
+      border-radius: 1.5rem;
+      border: 2px solid rgba(201, 169, 97, 0.3);
+      overflow: hidden;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.7);
+      margin-bottom: 2rem;
+    }
+
+    .slides-container {
+      position: relative;
+      min-height: 350px;
+      overflow: hidden;
+    }
+
+    .sentence-slide {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      padding: 3rem 2rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      transform: translateX(100%);
+      transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+      pointer-events: none;
+    }
+
+    .sentence-slide.active {
+      opacity: 1;
+      transform: translateX(0);
+      pointer-events: auto;
+      z-index: 10;
+    }
+
+    .slide-number {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: rgba(201, 169, 97, 0.6);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 1.5rem;
+    }
+
+    .sentence-text {
+      font-family: 'Crimson Text', serif;
+      font-size: 1.5rem;
+      line-height: 1.6;
+      text-align: center;
+      color: #e5e5e7;
+      max-width: 90%;
+      font-weight: 600;
+    }
+
+    .sentence-text.long {
+      font-size: 1.2rem;
+    }
+
+    .sentence-text.very-long {
+      font-size: 1rem;
+    }
+
+    /* NAVIGATION */
+    .slide-nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.5rem;
+      background: rgba(0, 0, 0, 0.2);
+    }
+
+    .nav-arrow {
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
+      background: rgba(201, 169, 97, 0.2);
+      border: 2px solid rgba(201, 169, 97, 0.4);
+      color: #C9A961;
+      font-size: 1.3rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all 0.3s;
+      font-weight: bold;
+    }
+
+    .nav-arrow:hover:not(:disabled) {
+      background: rgba(201, 169, 97, 0.35);
+      transform: scale(1.1);
+    }
+
+    .nav-arrow:disabled {
+      opacity: 0.2;
+      cursor: not-allowed;
+    }
+
+    .slide-dots {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .slide-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: rgba(99, 99, 102, 0.3);
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+
+    .slide-dot.active {
+      background: #C9A961;
+      transform: scale(1.4);
+      box-shadow: 0 0 10px rgba(201, 169, 97, 0.6);
+    }
+
+    /* ORDERING INTERFACE */
+    .ordering-section {
+      margin-top: 2rem;
+    }
+
+    .ordering-title {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: #2a2a2a;
+      margin-bottom: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .answer-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(50px, 1fr));
+      gap: 0.75rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .answer-input {
+      position: relative;
+    }
+
+    .answer-input label {
+      display: block;
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 0.7rem;
+      font-weight: 600;
+      color: #6b5843;
+      margin-bottom: 0.3rem;
+      text-align: center;
+    }
+
+    .answer-input input {
+      width: 100%;
+      padding: 0.6rem;
+      text-align: center;
+      font-size: 1rem;
+      font-weight: 700;
+      border: 2px solid rgba(139, 115, 85, 0.3);
+      border-radius: 0.5rem;
+      background: white;
+      color: #2a2a2a;
+      transition: all 0.3s;
+    }
+
+    .answer-input input:focus {
+      outline: none;
+      border-color: #C9A961;
+      box-shadow: 0 0 0 3px rgba(201, 169, 97, 0.2);
+    }
+
+    .answer-input.correct input {
+      border-color: #22c55e;
+      background: rgba(34, 197, 94, 0.1);
+    }
+
+    .answer-input.incorrect input {
+      border-color: #ef4444;
+      background: rgba(239, 68, 68, 0.1);
+    }
+
+    /* ACTION BUTTONS */
+    .game-actions {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .game-btn {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 0.9rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      padding: 0.9rem 2.5rem;
+      border: none;
+      border-radius: 2rem;
+      cursor: pointer;
+      transition: all 0.3s;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    .btn-submit {
+      background: linear-gradient(135deg, #c9a961 0%, #FFD700 100%);
+      color: #1a1410;
+    }
+
+    .btn-submit:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 25px rgba(201, 169, 97, 0.4);
+    }
+
+    .btn-submit:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+      transform: none;
+    }
+
+    .btn-retry {
+      background: linear-gradient(135deg, #6b5843 0%, #8b7355 100%);
+      color: #f5f1e8;
+    }
+
+    .btn-retry:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 25px rgba(107, 88, 67, 0.4);
+    }
+
+    .btn-new {
+      background: linear-gradient(135deg, #4a5568 0%, #718096 100%);
+      color: #e5e5e7;
+    }
+
+    .btn-new:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 25px rgba(74, 85, 104, 0.4);
+    }
+
+    /* RESULTS */
+    .results-display {
+      display: none;
+      background: rgba(201, 169, 97, 0.1);
+      border: 2px solid #C9A961;
+      border-radius: 1rem;
+      padding: 2rem;
+      margin-bottom: 1.5rem;
+      text-align: center;
+    }
+
+    .results-display.show {
+      display: block;
+      animation: slideIn 0.5s ease-out;
+    }
+
+    @keyframes slideIn {
+      from {
+        opacity: 0;
+        transform: translateY(-20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .results-score {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 3rem;
+      font-weight: 800;
+      color: #2a2a2a;
+      margin-bottom: 0.5rem;
+    }
+
+    .results-message {
+      font-size: 1.2rem;
+      color: #4a4a4a;
+      margin-bottom: 1rem;
+    }
+
+    .perfect-score {
+      color: #22c55e;
+    }
+
+    /* MOBILE */
+    @media (max-width: 768px) {
+      .sentence-text {
+        font-size: 1.2rem;
+      }
+
+      .sentence-text.long {
+        font-size: 1rem;
+      }
+
+      .sentence-text.very-long {
+        font-size: 0.9rem;
+      }
+
+      .answer-grid {
+        grid-template-columns: repeat(auto-fill, minmax(45px, 1fr));
+        gap: 0.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    
+    <!-- HEADER -->
+    <header class="game-header">
+      <div class="header-content">
+        <div class="brand">
+          <span class="brand-logo">INTUITY GAMES</span>
+          <span class="brand-subtitle">Sentence Sequencing</span>
+        </div>
+        <div class="score-display">
+          <span id="scoreText">Score: -</span>
+          <span class="crown-icon" id="crownIcon">👑</span>
+        </div>
+      </div>
+    </header>
+
+    <!-- GAME SELECTION SCREEN -->
+    <div class="game-select-screen active" id="selectScreen">
+      <h1 class="select-title">Choose Your Challenge</h1>
+      <p class="select-subtitle">Select a writing type to practice sentence ordering</p>
+      
+      <div class="content-types">
+        <div class="content-type-card" onclick="startGame('essays')">
+          <div class="type-icon">📝</div>
+          <div class="type-title">Essays</div>
+          <div class="type-description">Practice ordering argumentative and opinion essays</div>
+        </div>
+
+        <div class="content-type-card" onclick="startGame('reports')">
+          <div class="type-icon">📊</div>
+          <div class="type-title">Reports</div>
+          <div class="type-description">Master formal report structure and flow</div>
+        </div>
+
+        <div class="content-type-card" onclick="startGame('reviews')">
+          <div class="type-icon">⭐</div>
+          <div class="type-title">Reviews</div>
+          <div class="type-description">Learn product review organization</div>
+        </div>
+
+        <div class="content-type-card" onclick="startGame('emails')">
+          <div class="type-icon">📧</div>
+          <div class="type-title">Emails</div>
+          <div class="type-description">Perfect formal and informal email structure</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- GAME SCREEN -->
+    <div class="game-screen" id="gameScreen">
+      <div class="game-container">
+        <h2 class="game-title" id="gameTitle">Sentence Sequencing Challenge</h2>
+        
+        <div class="game-instructions">
+          <strong>📋 Instructions:</strong> The sentences below are jumbled! Navigate through them using the arrows, 
+          then enter the correct order number (1, 2, 3...) for each sentence in the boxes below. 
+          Click Submit to check your answer!
+        </div>
+
+        <!-- SLIDE VIEWER -->
+        <div class="slide-viewer">
+          <div class="slides-container" id="slidesContainer">
+            <!-- Slides will be generated here -->
+          </div>
+          
+          <div class="slide-nav">
+            <button class="nav-arrow" id="prevBtn" onclick="navigateSlide(-1)">←</button>
+            <div class="slide-dots" id="slideDots"></div>
+            <button class="nav-arrow" id="nextBtn" onclick="navigateSlide(1)">→</button>
+          </div>
+        </div>
+
+        <!-- RESULTS -->
+        <div class="results-display" id="resultsDisplay">
+          <div class="results-score" id="resultsScore">0%</div>
+          <div class="results-message" id="resultsMessage">Keep trying!</div>
+        </div>
+
+        <!-- ORDERING INTERFACE -->
+        <div class="ordering-section">
+          <h3 class="ordering-title">📝 Enter the Correct Order:</h3>
+          <div class="answer-grid" id="answerGrid">
+            <!-- Input boxes will be generated here -->
+          </div>
+        </div>
+
+        <!-- ACTIONS -->
+        <div class="game-actions">
+          <button class="game-btn btn-submit" id="submitBtn" onclick="checkAnswer()">Submit Answer</button>
+          <button class="game-btn btn-retry" id="retryBtn" onclick="retry()" style="display:none;">Try Again</button>
+          <button class="game-btn btn-new" onclick="newGame()">New Challenge</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    let currentType = null;
+    let currentData = null;
+    let currentSample = null;
+    let sentences = [];
+    let scrambledSentences = [];
+    let currentSlide = 0;
+    let correctOrder = [];
+    let hasSubmitted = false;
+
+    const DATA_PATHS = {
+      essays: 'data/essays-models.json',
+      reports: 'data/reports-models.json',
+      reviews: 'data/reviews-models.json',
+      emails: 'data/emails-models.json'
+    };
+
+    // Start game with selected type
+    async function startGame(type) {
+      currentType = type;
+      
+      try {
+        const response = await fetch(DATA_PATHS[type]);
+        if (!response.ok) throw new Error(`Failed to load ${type}`);
+        
+        currentData = await response.json();
+        
+        // Pick random sample
+        const randomIndex = Math.floor(Math.random() * currentData.samples.length);
+        currentSample = currentData.samples[randomIndex];
+        
+        // Extract and split sentences
+        extractSentences();
+        
+        // Show game screen
+        document.getElementById('selectScreen').classList.remove('active');
+        document.getElementById('gameScreen').classList.add('active');
+        
+        // Update title
+        document.getElementById('gameTitle').textContent = currentSample.topic || 'Sentence Sequencing Challenge';
+        
+        // Render game
+        renderGame();
+        
+      } catch (error) {
+        console.error('Error loading game:', error);
+        alert('Failed to load game data. Please try again.');
+      }
+    }
+
+    // Extract sentences from paragraphs
+    function extractSentences() {
+      sentences = [];
+      correctOrder = [];
+      
+      currentSample.paragraphs.forEach(para => {
+        // Split by sentence endings (. ! ?)
+        const paraSentences = para.text
+          .split(/(?<=[.!?])\s+/)
+          .filter(s => s.trim().length > 0)
+          .map(s => s.trim());
+        
+        sentences.push(...paraSentences);
+      });
+      
+      // Store correct order (0-indexed)
+      correctOrder = sentences.map((_, i) => i);
+      
+      // Create scrambled version
+      scrambledSentences = [...sentences];
+      shuffleArray(scrambledSentences);
+      
+      console.log('Total sentences:', sentences.length);
+      console.log('Scrambled:', scrambledSentences);
+    }
+
+    // Shuffle array (Fisher-Yates)
+    function shuffleArray(array) {
+      for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+      }
+    }
+
+    // Render game interface
+    function renderGame() {
+      currentSlide = 0;
+      hasSubmitted = false;
+      
+      // Reset UI
+      document.getElementById('resultsDisplay').classList.remove('show');
+      document.getElementById('submitBtn').style.display = 'inline-block';
+      document.getElementById('retryBtn').style.display = 'none';
+      document.getElementById('crownIcon').classList.remove('show');
+      document.getElementById('scoreText').textContent = 'Score: -';
+      
+      // Render slides
+      renderSlides();
+      
+      // Render input boxes
+      renderInputBoxes();
+      
+      // Update navigation
+      updateNavigation();
+    }
+
+    // Render sentence slides
+    function renderSlides() {
+      const container = document.getElementById('slidesContainer');
+      const dotsContainer = document.getElementById('slideDots');
+      
+      container.innerHTML = '';
+      dotsContainer.innerHTML = '';
+      
+      scrambledSentences.forEach((sentence, index) => {
+        // Create slide
+        const slide = document.createElement('div');
+        slide.className = `sentence-slide ${index === 0 ? 'active' : ''}`;
+        
+        // Determine text size based on length
+        let textClass = '';
+        if (sentence.length > 150) textClass = 'very-long';
+        else if (sentence.length > 100) textClass = 'long';
+        
+        slide.innerHTML = `
+          <div class="slide-number">Sentence ${index + 1} of ${scrambledSentences.length}</div>
+          <div class="sentence-text ${textClass}">${sentence}</div>
+        `;
+        
+        container.appendChild(slide);
+        
+        // Create dot
+        const dot = document.createElement('div');
+        dot.className = `slide-dot ${index === 0 ? 'active' : ''}`;
+        dot.onclick = () => goToSlide(index);
+        dotsContainer.appendChild(dot);
+      });
+    }
+
+    // Render input boxes
+    function renderInputBoxes() {
+      const grid = document.getElementById('answerGrid');
+      grid.innerHTML = '';
+      
+      scrambledSentences.forEach((_, index) => {
+        const inputDiv = document.createElement('div');
+        inputDiv.className = 'answer-input';
+        inputDiv.innerHTML = `
+          <label>S${index + 1}</label>
+          <input type="number" 
+                 id="input-${index}" 
+                 min="1" 
+                 max="${scrambledSentences.length}"
+                 placeholder="${index + 1}">
+        `;
+        grid.appendChild(inputDiv);
+      });
+    }
+
+    // Navigate slides
+    function navigateSlide(direction) {
+      const newSlide = currentSlide + direction;
+      if (newSlide >= 0 && newSlide < scrambledSentences.length) {
+        goToSlide(newSlide);
+      }
+    }
+
+    function goToSlide(index) {
+      currentSlide = index;
+      
+      // Update slides
+      const slides = document.querySelectorAll('.sentence-slide');
+      slides.forEach((slide, i) => {
+        slide.classList.toggle('active', i === index);
+      });
+      
+      // Update dots
+      const dots = document.querySelectorAll('.slide-dot');
+      dots.forEach((dot, i) => {
+        dot.classList.toggle('active', i === index);
+      });
+      
+      updateNavigation();
+    }
+
+    function updateNavigation() {
+      document.getElementById('prevBtn').disabled = currentSlide === 0;
+      document.getElementById('nextBtn').disabled = currentSlide === scrambledSentences.length - 1;
+    }
+
+    // Check answer
+    function checkAnswer() {
+      if (hasSubmitted) return;
+      
+      const userAnswers = [];
+      let allFilled = true;
+      
+      // Collect answers
+      scrambledSentences.forEach((_, index) => {
+        const input = document.getElementById(`input-${index}`);
+        const value = parseInt(input.value);
+        
+        if (!value || value < 1 || value > scrambledSentences.length) {
+          allFilled = false;
+        }
+        
+        userAnswers.push(value || 0);
+      });
+      
+      if (!allFilled) {
+        alert('Please fill in all boxes with numbers from 1 to ' + scrambledSentences.length);
+        return;
+      }
+      
+      // Check for duplicates
+      const uniqueAnswers = new Set(userAnswers);
+      if (uniqueAnswers.size !== userAnswers.length) {
+        alert('Each number can only be used once! Please check for duplicates.');
+        return;
+      }
+      
+      hasSubmitted = true;
+      
+      // Calculate score
+      let correctCount = 0;
+      
+      scrambledSentences.forEach((scrambledSentence, scrambledIndex) => {
+        const userPosition = userAnswers[scrambledIndex];
+        const correctPosition = sentences.indexOf(scrambledSentence) + 1; // 1-indexed
+        
+        const inputDiv = document.getElementById(`input-${scrambledIndex}`).parentElement;
+        
+        if (userPosition === correctPosition) {
+          correctCount++;
+          inputDiv.classList.add('correct');
+          inputDiv.classList.remove('incorrect');
+        } else {
+          inputDiv.classList.add('incorrect');
+          inputDiv.classList.remove('correct');
+        }
+      });
+      
+      const percentage = Math.round((correctCount / scrambledSentences.length) * 100);
+      
+      // Show results
+      showResults(percentage, correctCount);
+    }
+
+    function showResults(percentage, correctCount) {
+      const resultsDiv = document.getElementById('resultsDisplay');
+      const scoreEl = document.getElementById('resultsScore');
+      const messageEl = document.getElementById('resultsMessage');
+      const crownIcon = document.getElementById('crownIcon');
+      
+      scoreEl.textContent = `${percentage}%`;
+      
+      if (percentage === 100) {
+        scoreEl.className = 'results-score perfect-score';
+        messageEl.textContent = '🎉 Perfect! You mastered this text structure!';
+        crownIcon.classList.add('show');
+      } else if (percentage >= 80) {
+        scoreEl.className = 'results-score';
+        messageEl.textContent = `Great job! You got ${correctCount} out of ${scrambledSentences.length} correct!`;
+      } else if (percentage >= 60) {
+        scoreEl.className = 'results-score';
+        messageEl.textContent = `Good effort! You got ${correctCount} out of ${scrambledSentences.length} correct. Try again!`;
+      } else {
+        scoreEl.className = 'results-score';
+        messageEl.textContent = `You got ${correctCount} out of ${scrambledSentences.length} correct. Keep practicing!`;
+      }
+      
+      resultsDiv.classList.add('show');
+      document.getElementById('scoreText').textContent = `Score: ${percentage}%`;
+      document.getElementById('submitBtn').style.display = 'none';
+      document.getElementById('retryBtn').style.display = 'inline-block';
+    }
+
+    function retry() {
+      hasSubmitted = false;
+      
+      // Clear inputs and colors
+      scrambledSentences.forEach((_, index) => {
+        const input = document.getElementById(`input-${index}`);
+        const inputDiv = input.parentElement;
+        input.value = '';
+        inputDiv.classList.remove('correct', 'incorrect');
+      });
+      
+      // Hide results
+      document.getElementById('resultsDisplay').classList.remove('show');
+      document.getElementById('submitBtn').style.display = 'inline-block';
+      document.getElementById('retryBtn').style.display = 'none';
+      document.getElementById('crownIcon').classList.remove('show');
+    }
+
+    function newGame() {
+      document.getElementById('gameScreen').classList.remove('active');
+      document.getElementById('selectScreen').classList.add('active');
+    }
+  </script>
+</body>
+</html>
