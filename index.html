@@ -687,16 +687,33 @@
         position: userPositions[originalIndex] || null
       }));
       
-      // Sort by position (numbered sentences first, then unnumbered)
-      sentenceObjects.sort((a, b) => {
-        if (a.position === null && b.position === null) return 0;
-        if (a.position === null) return 1;
-        if (b.position === null) return -1;
-        return a.position - b.position;
+      // Create position slots (1 to max sentence count)
+      const positionSlots = new Array(scrambledSentences.length).fill(null);
+      const unpositioned = [];
+      
+      // Fill position slots with sentences that have assigned positions
+      sentenceObjects.forEach(obj => {
+        if (obj.position !== null && obj.position >= 1 && obj.position <= scrambledSentences.length) {
+          positionSlots[obj.position - 1] = obj;
+        } else {
+          unpositioned.push(obj);
+        }
       });
       
-      // Render sorted sentences
-      sentenceObjects.forEach(({ sentence, originalIndex, position }) => {
+      // Fill remaining slots with unpositioned sentences
+      let unpositionedIndex = 0;
+      for (let i = 0; i < positionSlots.length; i++) {
+        if (positionSlots[i] === null && unpositionedIndex < unpositioned.length) {
+          positionSlots[i] = unpositioned[unpositionedIndex++];
+        }
+      }
+      
+      // Render in order
+      positionSlots.forEach((obj, displayPosition) => {
+        if (!obj) return;
+        
+        const { sentence, originalIndex, position } = obj;
+        
         const card = document.createElement('div');
         card.className = 'sentence-card';
         if (position !== null) {
@@ -719,7 +736,7 @@
                      value="${position || ''}"
                      placeholder="#"
                      onblur="updatePosition(${originalIndex})"
-                     onkeypress="if(event.key === 'Enter') updatePosition(${originalIndex})">
+                     onkeypress="if(event.key === 'Enter') { this.blur(); }">
             </div>
           </div>
         `;
