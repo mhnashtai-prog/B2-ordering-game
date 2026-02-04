@@ -398,9 +398,9 @@
     }
 
     .sentence-card.has-number {
-      background: linear-gradient(135deg, #EBE6DC 0%, #E0DBCE 100%);
-      border-color: rgba(201, 169, 97, 0.4);
-      box-shadow: 0 3px 12px rgba(201, 169, 97, 0.15), 0 1px 4px rgba(0, 0, 0, 0.08);
+      background: linear-gradient(135deg, #DDD8CC 0%, #D2CEC2 100%);
+      border-color: rgba(201, 169, 97, 0.5);
+      box-shadow: 0 3px 12px rgba(201, 169, 97, 0.2), 0 1px 4px rgba(0, 0, 0, 0.1);
     }
 
     .sentence-card.has-number::before {
@@ -1111,9 +1111,10 @@
         const card = document.createElement('div');
         card.className = 'sentence-card';
         
-        // Add visual states
-        if (position !== null) {
+        // ALWAYS add has-number class if position exists (for darker tone)
+        if (position !== null && position !== undefined) {
           card.classList.add('has-number');
+          console.log(`Card S${originalIndex + 1} has position ${position} - adding has-number class`);
           // Highlight duplicates
           if (positionCounts[position] > 1) {
             card.classList.add('duplicate-number');
