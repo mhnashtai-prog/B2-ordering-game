@@ -408,6 +408,26 @@
       background: linear-gradient(180deg, #C9A961 0%, #B89650 100%);
     }
 
+    .sentence-card.duplicate-number {
+      background: linear-gradient(135deg, #FEF3E8 0%, #FDECD4 100%);
+      border-color: rgba(239, 68, 68, 0.5);
+      box-shadow: 0 3px 12px rgba(239, 68, 68, 0.2), 0 1px 4px rgba(0, 0, 0, 0.08);
+      animation: pulseWarning 1.5s ease-in-out infinite;
+    }
+
+    .sentence-card.duplicate-number::before {
+      background: linear-gradient(180deg, #f59e0b 0%, #d97706 100%);
+    }
+
+    @keyframes pulseWarning {
+      0%, 100% {
+        border-color: rgba(239, 68, 68, 0.5);
+      }
+      50% {
+        border-color: rgba(239, 68, 68, 0.7);
+      }
+    }
+
     .sentence-card.correct {
       border-color: #10b981;
       background: linear-gradient(135deg, #ecfdf5 0%, #d1fae5 100%);
@@ -577,7 +597,133 @@
       background: rgba(28, 28, 30, 1);
     }
 
+    .btn-answers {
+      background: linear-gradient(135deg, rgba(59, 130, 246, 0.15) 0%, rgba(37, 99, 235, 0.15) 100%);
+      border: 2px solid rgba(59, 130, 246, 0.5);
+      color: #3b82f6;
+    }
+
+    .btn-answers:hover {
+      transform: translateY(-3px);
+      border-color: rgba(59, 130, 246, 0.7);
+      color: #60a5fa;
+      box-shadow: 0 8px 24px rgba(59, 130, 246, 0.3);
+      background: linear-gradient(135deg, rgba(59, 130, 246, 0.2) 0%, rgba(37, 99, 235, 0.2) 100%);
+    }
+
+    .btn-answers.showing-answers {
+      background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+      color: #ffffff;
+      border-color: #3b82f6;
+    }
+
+    .btn-answers.showing-answers:hover {
+      background: linear-gradient(135deg, #60a5fa 0%, #3b82f6 100%);
+    }
+
     /* RESULTS */
+    .answer-key-display {
+      display: none;
+      background: linear-gradient(135deg, rgba(59, 130, 246, 0.12) 0%, rgba(37, 99, 235, 0.08) 100%);
+      border: 2px solid rgba(59, 130, 246, 0.4);
+      border-radius: 1.125rem;
+      padding: 0;
+      margin-bottom: 1.5rem;
+      overflow: hidden;
+      box-shadow: 0 4px 20px rgba(59, 130, 246, 0.15);
+    }
+
+    .answer-key-display.show {
+      display: block;
+      animation: slideIn 0.4s ease-out;
+    }
+
+    .answer-key-header {
+      background: linear-gradient(135deg, rgba(59, 130, 246, 0.2) 0%, rgba(37, 99, 235, 0.15) 100%);
+      padding: 1rem 1.25rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid rgba(59, 130, 246, 0.3);
+    }
+
+    .answer-key-title {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1rem;
+      font-weight: 700;
+      color: #3b82f6;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .close-answers {
+      background: rgba(59, 130, 246, 0.15);
+      border: 1px solid rgba(59, 130, 246, 0.3);
+      color: #3b82f6;
+      font-size: 1.25rem;
+      font-weight: 700;
+      width: 32px;
+      height: 32px;
+      border-radius: 0.5rem;
+      cursor: pointer;
+      transition: all 0.3s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0;
+      line-height: 1;
+    }
+
+    .close-answers:hover {
+      background: rgba(59, 130, 246, 0.25);
+      border-color: rgba(59, 130, 246, 0.5);
+      transform: scale(1.1);
+    }
+
+    .answer-key-content {
+      padding: 1.25rem;
+      max-height: 400px;
+      overflow-y: auto;
+    }
+
+    .answer-sentence {
+      display: flex;
+      gap: 0.875rem;
+      align-items: flex-start;
+      padding: 0.75rem 1rem;
+      margin-bottom: 0.5rem;
+      background: rgba(255, 255, 255, 0.5);
+      border-radius: 0.75rem;
+      border-left: 4px solid #3b82f6;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+    }
+
+    .answer-number {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.125rem;
+      font-weight: 800;
+      color: #3b82f6;
+      min-width: 32px;
+      height: 32px;
+      background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+      color: white;
+      border-radius: 0.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      box-shadow: 0 2px 6px rgba(59, 130, 246, 0.3);
+    }
+
+    .answer-text {
+      flex: 1;
+      font-family: 'Crimson Text', serif;
+      font-size: 0.95rem;
+      line-height: 1.5;
+      color: #1c1c1e;
+      font-weight: 600;
+    }
+
     .results-display {
       display: none;
       background: linear-gradient(135deg, rgba(201, 169, 97, 0.15) 0%, rgba(201, 169, 97, 0.1) 100%);
@@ -771,6 +917,17 @@
           </div>
         </div>
 
+        <!-- ANSWER KEY DISPLAY -->
+        <div class="answer-key-display" id="answerKeyDisplay">
+          <div class="answer-key-header">
+            <span class="answer-key-title">✓ Correct Sequence</span>
+            <button class="close-answers" onclick="toggleAnswers()">✕</button>
+          </div>
+          <div class="answer-key-content" id="answerKeyContent">
+            <!-- Answer sentences will be inserted here -->
+          </div>
+        </div>
+
         <!-- RESULTS -->
         <div class="results-display" id="resultsDisplay">
           <div class="results-score" id="resultsScore">0%</div>
@@ -781,6 +938,7 @@
         <div class="game-actions">
           <button class="game-btn btn-submit" id="submitBtn" onclick="checkAnswer()">Submit Answer</button>
           <button class="game-btn btn-retry" id="retryBtn" onclick="retry()" style="display:none;">Try Again</button>
+          <button class="game-btn btn-answers" id="answersBtn" onclick="toggleAnswers()">Show Answers</button>
           <button class="game-btn btn-new" onclick="newGame()">New Challenge</button>
         </div>
       </div>
@@ -797,6 +955,7 @@
     let correctOrder = [];
     let hasSubmitted = false;
     let userPositions = {}; // Track user-assigned positions
+    let showingAnswers = false; // Track if answers are being shown
 
     const DATA_PATHS = {
       essays: 'data/essays-models.json',
@@ -924,38 +1083,38 @@
         position: userPositions[originalIndex] || null
       }));
       
-      // Create position slots (1 to max sentence count)
-      const positionSlots = new Array(scrambledSentences.length).fill(null);
-      const unpositioned = [];
+      // Sort: positioned sentences by their position number, then unpositioned sentences
+      const positioned = sentenceObjects
+        .filter(obj => obj.position !== null)
+        .sort((a, b) => a.position - b.position);
       
-      // Fill position slots with sentences that have assigned positions
-      sentenceObjects.forEach(obj => {
-        if (obj.position !== null && obj.position >= 1 && obj.position <= scrambledSentences.length) {
-          positionSlots[obj.position - 1] = obj;
-        } else {
-          unpositioned.push(obj);
-        }
+      const unpositioned = sentenceObjects.filter(obj => obj.position === null);
+      
+      // Combine: positioned first, then unpositioned
+      const displayOrder = [...positioned, ...unpositioned];
+      
+      // Check for duplicate positions
+      const positionCounts = {};
+      positioned.forEach(obj => {
+        positionCounts[obj.position] = (positionCounts[obj.position] || 0) + 1;
       });
       
-      // Fill remaining slots with unpositioned sentences
-      let unpositionedIndex = 0;
-      for (let i = 0; i < positionSlots.length; i++) {
-        if (positionSlots[i] === null && unpositionedIndex < unpositioned.length) {
-          positionSlots[i] = unpositioned[unpositionedIndex++];
-        }
-      }
-      
-      // Render in order
-      positionSlots.forEach((obj, displayPosition) => {
-        if (!obj) return;
-        
+      // Render all sentences in display order
+      displayOrder.forEach((obj) => {
         const { sentence, originalIndex, position } = obj;
         
         const card = document.createElement('div');
         card.className = 'sentence-card';
+        
+        // Add visual states
         if (position !== null) {
           card.classList.add('has-number');
+          // Highlight duplicates
+          if (positionCounts[position] > 1) {
+            card.classList.add('duplicate-number');
+          }
         }
+        
         card.id = `card-${originalIndex}`;
         
         const highlightedText = highlightLinkingWords(sentence);
@@ -1085,6 +1244,13 @@
     function retry() {
       hasSubmitted = false;
       userPositions = {};
+      showingAnswers = false;
+      
+      // Reset answers button and hide answer key
+      const answersBtn = document.getElementById('answersBtn');
+      answersBtn.textContent = 'Show Answers';
+      answersBtn.classList.remove('showing-answers');
+      document.getElementById('answerKeyDisplay').classList.remove('show');
       
       // Re-render without positions
       renderSentences();
@@ -1103,7 +1269,50 @@
       document.getElementById('retryBtn').style.display = 'none';
     }
 
+    function toggleAnswers() {
+      const answersBtn = document.getElementById('answersBtn');
+      const answerKeyDisplay = document.getElementById('answerKeyDisplay');
+      const answerKeyContent = document.getElementById('answerKeyContent');
+      
+      if (showingAnswers) {
+        // Hide answers
+        showingAnswers = false;
+        answersBtn.textContent = 'Show Answers';
+        answersBtn.classList.remove('showing-answers');
+        answerKeyDisplay.classList.remove('show');
+      } else {
+        // Show answers
+        showingAnswers = true;
+        answersBtn.textContent = 'Hide Answers';
+        answersBtn.classList.add('showing-answers');
+        
+        // Build answer key content
+        answerKeyContent.innerHTML = '';
+        sentences.forEach((sentence, index) => {
+          const answerDiv = document.createElement('div');
+          answerDiv.className = 'answer-sentence';
+          
+          const highlightedText = highlightLinkingWords(sentence);
+          
+          answerDiv.innerHTML = `
+            <div class="answer-number">${index + 1}</div>
+            <div class="answer-text">${highlightedText}</div>
+          `;
+          
+          answerKeyContent.appendChild(answerDiv);
+        });
+        
+        answerKeyDisplay.classList.add('show');
+      }
+    }
+
     function newGame() {
+      showingAnswers = false;
+      const answersBtn = document.getElementById('answersBtn');
+      answersBtn.textContent = 'Show Answers';
+      answersBtn.classList.remove('showing-answers');
+      document.getElementById('answerKeyDisplay').classList.remove('show');
+      
       document.getElementById('gameScreen').classList.remove('active');
       document.getElementById('selectScreen').classList.add('active');
     }
