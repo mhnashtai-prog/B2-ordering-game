@@ -933,7 +933,7 @@
         <div class="game-actions">
           <button class="game-btn btn-submit" id="submitBtn" onclick="checkAnswer()">Submit Answer</button>
           <button class="game-btn btn-retry" id="retryBtn" onclick="retry()" style="display:none;">Try Again</button>
-          <button class="game-btn btn-answers" id="answersBtn" onclick="toggleAnswers()">Show Answers</button>
+          <button class="game-btn btn-answers" id="answersBtn" onclick="toggleAnswers()" style="display:none;">Show Answers</button>
           <button class="game-btn btn-new" onclick="newGame()">New Challenge</button>
         </div>
       </div>
@@ -1114,7 +1114,6 @@
         // ALWAYS add has-number class if position exists (for darker tone)
         if (position !== null && position !== undefined) {
           card.classList.add('has-number');
-          console.log(`Card S${originalIndex + 1} has position ${position} - adding has-number class`);
           // Highlight duplicates
           if (positionCounts[position] > 1) {
             card.classList.add('duplicate-number');
@@ -1359,6 +1358,7 @@
       resultsDiv.classList.add('show');
       document.getElementById('submitBtn').style.display = 'none';
       document.getElementById('retryBtn').style.display = 'inline-block';
+      document.getElementById('answersBtn').style.display = 'inline-block'; // Show answers button after submission
     }
 
     function retry() {
@@ -1370,6 +1370,7 @@
       const answersBtn = document.getElementById('answersBtn');
       answersBtn.textContent = 'Show Answers';
       answersBtn.classList.remove('showing-answers');
+      answersBtn.style.display = 'none'; // Hide answers button on retry
       document.getElementById('answerKeyDisplay').classList.remove('show');
       
       // Re-render without positions
@@ -1431,6 +1432,7 @@
       const answersBtn = document.getElementById('answersBtn');
       answersBtn.textContent = 'Show Answers';
       answersBtn.classList.remove('showing-answers');
+      answersBtn.style.display = 'none'; // Hide on new game
       document.getElementById('answerKeyDisplay').classList.remove('show');
       
       document.getElementById('gameScreen').classList.remove('active');
